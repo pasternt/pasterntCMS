@@ -1,0 +1,6 @@
+[07-Sep-2013 16:21:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/cms/demo/niklas/install/index.php on line 4
+[07-Sep-2013 16:23:23 Europe/Berlin] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/cms/demo/niklas/install/index.php on line 5
+[07-Sep-2013 16:23:37 Europe/Berlin] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/cms/demo/niklas/install/index.php on line 5
+[07-Sep-2013 16:26:34 Europe/Berlin] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/cms/demo/niklas/install/index.php on line 5
+[07-Sep-2013 16:27:00 Europe/Berlin] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/cms/demo/niklas/install/index.php on line 5
+[08-Sep-2013 18:55:39 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/cms/demo/niklas/install/install.php on line 3

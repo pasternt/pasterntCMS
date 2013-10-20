@@ -24,13 +24,14 @@ function show()
                 while ($zeile = mysql_fetch_array( $db_erg, MYSQL_ASSOC))
                 {
                     $header = $zeile['name'];
-                    $id = $zeile['id'];
+                    $id = $zeile['order'];
                     $text = $zeile['url'];
                     echo '<tr><td width=40%>';
                     echo $header;
                     echo '</td>';
                     echo '<td width=20%>';
                     up($id);
+                    down($id);
                     echo '</td><td>';
                     echo '</td></tr>';
                 }
@@ -40,29 +41,26 @@ function show()
     }
     function up($id){
         echo '<form action="order.php" method="POST"><input type="hidden" value="'.$id.'" name="id"><input type="hidden" value="up" name="action">
-        <input type="submit" value="Hoch" name="submit" class="button small" />';
+        <input type="submit" value="Hoch '.$id.'" name="submit" class="button small" />';
     }
+    function down($id){
+        echo '<form action="order.php" method="POST"><input type="hidden" value="'.$id.'" name="id"><input type="hidden" value="down" name="action">
+        <input type="submit" value="Runter" name="submit" class="button small" />';
+    }
+
 function getInput(){
                 include '../config.php';
                 $action = $_POST['action'];
-                if($action == 'add'){
-                        $titel = $_POST['titel'];
-                        $titel = htmlentities(check_input($titel));
-                        $content = $_POST['url'];
-                        $content = check_input($content);
-                        $sql = "INSERT INTO navbar (name, url) VALUES ($titel, $content)";
-                        if(!mysql_query($sql)){
-                            $error = mysql_error();
-                            echo '<div data-alert class="alert-box alert">
-                                Navigationspunkt konnte nicht erfolgreich angelegt werden! '.$error.'
-                                <a href="#" class="close">&times;</a>
-                                </div>';
-                        } else {
-                        echo '<div data-alert class="alert-box success">
-                                Navigationspunkt erfolgreich angelegt!
-                                <a href="#" class="close">&times;</a>
-                                </div>';
-                        }
+                echo $action;
+                $id = $_POST['id'];
+                echo $id;
+                if($action == 'up'){
+                        $id = $_POST['id'];
+                        $id = checkinput($id);
+                        $up = $id - 1;
+
+                        echo $id;
+                        echo $up;
                 }  
                                 if($action == 'delete'){
                                     include '../config.php';

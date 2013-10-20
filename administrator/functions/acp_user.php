@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 //////////////////////////////////////////////////////////////////////////////
 //* USERMANAGMENT v1.0	for pasterntCMS										//
@@ -187,7 +187,7 @@ echo '<div id="'.$userid.'_lockdetails" class="reveal-modal">';
 
 function adduser() {
 include("acp_checkinput.php");
-include (dirname(__FILE__)."/../config.php");
+include ("../config.php");
 
 
 if(isset($_POST['submite'])){

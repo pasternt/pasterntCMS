@@ -1,68 +1,49 @@
 <?php
-    include 'config.php';
-    include 'functions/page.php';
-?>
-<!--Im Header nichts bearbeiten, außer den CSS-Files-->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><? echo $site_title;?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-glyphicons.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body background="img/bg.jpg">
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylorotwell@gmail.com>
+ */
 
-<!--Navigation-->
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We'll require it
+| into the script here so that we do not have to worry about the
+| loading of any our classes "manually". Feels great to relax.
+|
+*/
 
-      <a class="navbar-brand" href="index.php"><?php echo $site_title;?></a></div>
-         <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">         
-    <?php navi(); ?>
-        </ul>
-    <ul class="nav navbar-nav navbar-right">
+require __DIR__.'/../bootstrap/autoload.php';
 
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-<!--Ende Navbar-->
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let's turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight these users.
+|
+*/
 
-<!--Anfang Contentbereich-->
-      <div class="container content">
-          <div class="panel panel-default">
-            <div class="panel-body">
+$app = require_once __DIR__.'/../bootstrap/start.php';
 
-             <!--Ruft die Startseite auf-->
-                <?php
-                    index();
-                ?>
-            </div>
-        </div>
-    <!--Footertext-->
-  <div class="well">
-    <?php footer(); ?>
-</div>
-</div>
-<!--Ende Contentbereich-->
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can simply call the run method,
+| which will execute the request and send the response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have whipped up for them.
+|
+*/
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+$app->run();

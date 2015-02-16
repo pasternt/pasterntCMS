@@ -1,2 +1,2 @@
 # pasterntCMS
-pasterntCMS Closed-Beta Build
+Installer für das pasterntCMS. Momentan WIP.

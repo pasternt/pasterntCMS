@@ -188,12 +188,15 @@
               $zip->close();
               $check->rrmdir('download');
               $check->rrmdir('lib');
-            } else {
               
+              $check->chmod('core/app/storage', 0777);
+            } else {
+              echo 0;
             }
         }else{
             echo 0;
         }
+
 
     }
 ?>

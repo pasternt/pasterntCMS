@@ -49,6 +49,13 @@
              rmdir($dir); 
            } 
      }
+             public function chmod($pathname, $filemode){
+            $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($pathname));
+
+            foreach($iterator as $item) {
+                chmod($item, $filemode);
+            } 
+        }
     }
 
 ?>
